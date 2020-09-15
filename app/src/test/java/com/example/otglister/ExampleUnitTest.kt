@@ -1,4 +1,4 @@
-package com.example.eyecarehd
+package com.example.otglister
 
 import org.junit.Test
 

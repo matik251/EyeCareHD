@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">EyeCareHD</string>
-    <string name="title_home">Home</string>
-    <string name="title_data">Data</string>
+    <string name="app_name">Eye Care HD</string>
+    <string name="switch_bg_work">Background work </string>
+    <string name="switch_firebase">Send to Firebase </string>
 </resources>

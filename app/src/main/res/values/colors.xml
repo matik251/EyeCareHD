@@ -5,5 +5,6 @@
     <color name="colorAccent">#03DAC5</color>
     <color name="listBackground">#e1e1e1</color>
     <color name="white">#fafafa</color>
+    <color name="android_green">#3DDC84</color>
 
 </resources>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #1d1d33;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        opacity: 0.04;
+      }
+
+      .cls-3 {
+        fill: #cad2db;
+      }
+
+      .cls-4 {
+        fill: #697487;
+      }
+    </style>
+  </defs>
+  <g id="Warstwa_2" data-name="Warstwa 2">
+    <g id="Warstwa_1-2" data-name="Warstwa 1">
+      <g>
+        <rect class="cls-1" width="300" height="300"/>
+        <path class="cls-2" d="M33.2,250.67v5.4A21.89,21.89,0,0,0,55.05,278h56.89a10.27,10.27,0,0,0,10.25-10.29v-1H170V208H122.17a10.25,10.25,0,0,0-10.23-10H55.05A21.89,21.89,0,0,0,33.2,219.93V224H0v26.67Z"/>
+        <path class="cls-2" d="M266.8,66.33v-5.4A21.89,21.89,0,0,0,245,39H188.06a10.27,10.27,0,0,0-10.25,10.29v1H130V109h47.83a10.25,10.25,0,0,0,10.23,10H245A21.89,21.89,0,0,0,266.8,97.07V93H300V66.33Z"/>
+        <g>
+          <rect class="cls-3" x="127.23" y="43.1" width="58.67" height="53.13" transform="translate(86.9 226.23) rotate(-90)"/>
+          <path class="cls-4" d="M177.81,39.29V98.71A10.27,10.27,0,0,0,188.06,109H245A21.89,21.89,0,0,0,266.8,87.07V83H300V56.33H266.8v-5.4A21.89,21.89,0,0,0,245,29H188.06A10.27,10.27,0,0,0,177.81,39.29Z"/>
+          <rect class="cls-4" x="147.24" y="78.69" width="13.33" height="10.62" transform="translate(69.91 237.91) rotate(-90)"/>
+          <rect class="cls-4" x="147.24" y="49.69" width="13.33" height="10.62" transform="translate(98.91 208.91) rotate(-90)"/>
+        </g>
+        <g>
+          <rect class="cls-3" x="114.1" y="201.77" width="58.67" height="53.12" transform="translate(371.77 84.9) rotate(90)"/>
+          <path class="cls-4" d="M122.19,258.71V199.29A10.27,10.27,0,0,0,111.94,189H55.05A21.89,21.89,0,0,0,33.2,210.93V215H0v26.67H33.2v5.4A21.89,21.89,0,0,0,55.05,269h56.89A10.27,10.27,0,0,0,122.19,258.71Z"/>
+          <rect class="cls-4" x="139.43" y="208.69" width="13.33" height="10.62" transform="translate(360.09 67.91) rotate(90)"/>
+          <rect class="cls-4" x="139.43" y="237.69" width="13.33" height="10.62" transform="translate(389.09 96.91) rotate(90)"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

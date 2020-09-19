@@ -1,35 +1,45 @@
 package com.example.otglister
 
+import android.Manifest
 import android.content.Context
+import android.content.pm.PackageManager
 import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import android.location.Location
+import android.location.LocationManager
+import android.net.wifi.WifiManager
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationListener
 import com.google.android.gms.location.LocationServices
-import okhttp3.*
+import okhttp3.Call
+import okhttp3.Callback
+import okhttp3.OkHttpClient
+import okhttp3.Request
 import okhttp3.RequestBody.Companion.toRequestBody
+import okhttp3.Response
 import java.io.IOException
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
+
 
 class MainActivity : AppCompatActivity(), SensorEventListener {
     private lateinit var listView : ListView
     private var sensor: Sensor? = null
     private var sensorManager: SensorManager? = null
     private lateinit var fusedLocationClient: FusedLocationProviderClient
-    private var senderService: SenderService? = null
 
     data class LightPosLog(val user: String, val time: String, val light: Float, var location: Location?, var sent2DB: Boolean?)
 
     private var user: String = ""
     var dataList = HashMap<Int, LightPosLog>()
     var scanning = true;
-    var sending = true;
+    var sending = false;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,8 +62,6 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
         sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
         sensor = sensorManager!!.getDefaultSensor(Sensor.TYPE_LIGHT)
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
-
-        senderService = SenderService()
     }
 
     override fun onDestroy() {
@@ -84,6 +92,28 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
 
     fun getLastKnownLocation() : Location?{
         var ret : Location? = null
+        if (ActivityCompat.checkSelfPermission(
+                this,
+                Manifest.permission.ACCESS_FINE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
+                this,
+                Manifest.permission.ACCESS_COARSE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            ActivityCompat.requestPermissions(
+                this,
+                arrayOf(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION),
+                1
+            );
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            //return
+        }
         fusedLocationClient.lastLocation
             .addOnSuccessListener { location : Location? ->
                 // Got last known location. In some rare situations this can be null.
@@ -99,12 +129,12 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
     }
 
     override fun onSensorChanged(event: SensorEvent?) {
+        var temp: LightPosLog? = null;
         try {
-            var temp = LightPosLog(user, this.getTimeStamp(), event!!.values[0], getLastKnownLocation(), false)
+            temp = LightPosLog(getMac(this).toString(), this.getTimeStamp(), event!!.values[0], getLastKnownLocation(), false)
             dataList.put(dataList.count()+1, temp)
         } catch (e: IOException) {
         }
-
         var counter = dataList.count()
         var listItems = arrayOfNulls<String>(counter)
         dataList.values.forEach { entry ->
@@ -113,43 +143,77 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
         }
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, listItems)
         listView.adapter = adapter
-        sendData()
+
+        if(sending){
+            var result = sendData(temp)
+            temp?.sent2DB = result;
+            if (temp != null) {
+                dataList.replace(dataList.count(), temp)
+            }
+            sendAllData();
+        }
     }
 
-    fun onBgWorkCheckedChanged(checked: Boolean) {
+    public fun onBgWorkCheckedChanged(checked: Boolean) {
         // implementation
         scanning = checked
     }
 
-    fun onFirebaseCheckedChanged(checked: Boolean) {
+    public fun onFirebaseCheckedChanged(checked: Boolean) {
         // implementation
         sending = checked
+        //sendData()
     }
 
-    fun sendData() {
+    fun getMac(context: Context): String {
+        val manager = context.getSystemService(Context.WIFI_SERVICE) as WifiManager
+        val info = manager.connectionInfo
+        return info.macAddress.toUpperCase()
+    }
+
+    fun sendAllData(){
+        for (entry in dataList) {
+            if(entry.value.sent2DB == false){
+                var result = sendData(entry.value)
+                if(result){
+                    entry.value.sent2DB = true;
+                    dataList.replace(entry.key, entry.value)
+                }
+            }
+        }
+
+    }
+
+    fun sendData(data: LightPosLog?):Boolean {
+        var result = false;
         val currTime = LocalDateTime.now();
         val payload = "{\n" +
-                "    \"Mac\": \"30-52-CB-81-87-27\",\n" +
-                "    \"Category\": \"Sender\",\n" +
-                "    \"Data\": 154,\n" +
-                "    \"CreationTime\": \"2020-09-19T01:50:34\",\n" +
+                "    \"Mac\": \"${data?.user.toString()}\",\n" +
+                "    \"Category\": \"Light\",\n" +
+                "    \"Data\": ${data?.light?.toInt()},\n" +
+                "    \"Position\": \"${data?.location?.toString()}\",\n" +
+                "    \"CreationTime\": \"${data?.time.toString().replace(" ","T")}\",\n" +
                 "    \"SendTime\": \"$currTime\"\n" +
                 "}"
 
-        val okHttpClient = OkHttpClient()
+        val okHttpClient = OkHttpClient.Builder()
+            .followRedirects(true)
+            .build()
+
         val requestBody = payload.toRequestBody()
         val request = Request.Builder()
+            .header("Content-Type","application/json")
             .method("POST", requestBody)
-            .url("https://192.168.55.105:5001/api/DataRecords")
+            .url("http://192.168.55.105:5001/api/DataRecords")
             .build()
         okHttpClient.newCall(request).enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
-                val toast = Toast.makeText(applicationContext, e.message, Toast.LENGTH_SHORT)
             }
 
             override fun onResponse(call: Call, response: Response) {
-                val toast = Toast.makeText(applicationContext, response.message, Toast.LENGTH_SHORT)
+                result = true
             }
         })
+        return result
     }
 }

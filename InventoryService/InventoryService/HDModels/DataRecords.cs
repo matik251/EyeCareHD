@@ -9,6 +9,7 @@ namespace InventoryService.HDModels
         public string Mac { get; set; }
         public string Category { get; set; }
         public int Data { get; set; }
+        public string Position { get; set; }
         public DateTime CreationTime { get; set; }
         public DateTime SendTime { get; set; }
         public DateTime DbTime { get; set; }

@@ -29,6 +29,10 @@ namespace InventoryService.HDModels
                     .HasMaxLength(10)
                     .IsUnicode(false);
 
+                entity.Property(e => e.Position)
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
+
                 entity.Property(e => e.Data)
                     .IsRequired();
 

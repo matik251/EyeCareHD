@@ -300,7 +300,6 @@ C:\Users\Dell\Documents\GitHub\EyeCareHD\InventoryService\InventoryService\bin\D
 C:\Users\Dell\Documents\GitHub\EyeCareHD\InventoryService\InventoryService\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Dell\Documents\GitHub\EyeCareHD\InventoryService\InventoryService\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Dell\Documents\GitHub\EyeCareHD\InventoryService\InventoryService\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Dell\Documents\GitHub\EyeCareHD\InventoryService\InventoryService\obj\Debug\netcoreapp3.1\InventoryService.csprojAssemblyReference.cache
 C:\Users\Dell\Documents\GitHub\EyeCareHD\InventoryService\InventoryService\obj\Debug\netcoreapp3.1\InventoryService.AssemblyInfoInputs.cache
 C:\Users\Dell\Documents\GitHub\EyeCareHD\InventoryService\InventoryService\obj\Debug\netcoreapp3.1\InventoryService.AssemblyInfo.cs
 C:\Users\Dell\Documents\GitHub\EyeCareHD\InventoryService\InventoryService\obj\Debug\netcoreapp3.1\InventoryService.csproj.CoreCompileInputs.cache
@@ -312,3 +311,4 @@ C:\Users\Dell\Documents\GitHub\EyeCareHD\InventoryService\InventoryService\obj\D
 C:\Users\Dell\Documents\GitHub\EyeCareHD\InventoryService\InventoryService\obj\Debug\netcoreapp3.1\InventoryService.dll
 C:\Users\Dell\Documents\GitHub\EyeCareHD\InventoryService\InventoryService\obj\Debug\netcoreapp3.1\InventoryService.pdb
 C:\Users\Dell\Documents\GitHub\EyeCareHD\InventoryService\InventoryService\obj\Debug\netcoreapp3.1\InventoryService.genruntimeconfig.cache
+C:\Users\Dell\Documents\GitHub\EyeCareHD\InventoryService\InventoryService\obj\Debug\netcoreapp3.1\InventoryService.csprojAssemblyReference.cache

@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Eye Care HD</string>
     <string name="switch_bg_work">Background work </string>
-    <string name="switch_firebase">Send to Firebase </string>
+    <string name="switch_firebase">Send to DB </string>
 </resources>

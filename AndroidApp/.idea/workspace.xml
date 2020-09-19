@@ -7,7 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a03d1fbc-e3e3-40e9-bde6-4f93ca4fb278" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DB/tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../DB/tables.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,10 +26,19 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Class" />
+        <option value="Kotlin File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1cdtWu0nwaSVz2vLP2jUPuXI6IH" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -124,5 +133,12 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1289" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1600475849435">
+      <screen x="0" y="0" width="3200" height="1760" />
+    </state>
+    <state x="859" y="0" key="com.intellij.ide.util.TipDialog/0.0.2133.1160@0.0.2133.1160" timestamp="1600475036917" />
+    <state x="1289" y="0" key="com.intellij.ide.util.TipDialog/0.0.3200.1760@0.0.3200.1760" timestamp="1600475849435" />
   </component>
 </project>

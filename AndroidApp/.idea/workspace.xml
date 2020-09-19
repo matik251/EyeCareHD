@@ -7,13 +7,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a03d1fbc-e3e3-40e9-bde6-4f93ca4fb278" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../DB/tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../DB/tables.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../InventoryService/.vs/InventoryService/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/../InventoryService/.vs/InventoryService/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../InventoryService/.vs/InventoryService/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../InventoryService/.vs/InventoryService/v16/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../InventoryService/InventoryService/HDModels/HDContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../InventoryService/InventoryService/HDModels/HDContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../InventoryService/InventoryService/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../InventoryService/InventoryService/Properties/launchSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../InventoryService/InventoryService/bin/Debug/netcoreapp3.1/InventoryService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../InventoryService/InventoryService/bin/Debug/netcoreapp3.1/InventoryService.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../InventoryService/InventoryService/bin/Debug/netcoreapp3.1/InventoryService.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../InventoryService/InventoryService/bin/Debug/netcoreapp3.1/InventoryService.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../InventoryService/InventoryService/bin/Debug/netcoreapp3.1/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../InventoryService/InventoryService/bin/Debug/netcoreapp3.1/Properties/launchSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../InventoryService/InventoryService/obj/Debug/netcoreapp3.1/InventoryService.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../InventoryService/InventoryService/obj/Debug/netcoreapp3.1/InventoryService.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../InventoryService/InventoryService/obj/Debug/netcoreapp3.1/InventoryService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../InventoryService/InventoryService/obj/Debug/netcoreapp3.1/InventoryService.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../InventoryService/InventoryService/obj/Debug/netcoreapp3.1/InventoryService.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../InventoryService/InventoryService/obj/Debug/netcoreapp3.1/InventoryService.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="LMG710EM15d7bfc0" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -135,10 +145,26 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
+    <state x="1383" y="593" key="#com.intellij.ide.util.MemberChooser" timestamp="1600478700148">
+      <screen x="0" y="0" width="2133" height="1160" />
+    </state>
+    <state x="1383" y="593" key="#com.intellij.ide.util.MemberChooser/0.0.2133.1160@0.0.2133.1160" timestamp="1600478700148" />
+    <state x="-471" y="180" width="2573" height="1547" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1600512081588">
+      <screen x="0" y="0" width="2133" height="1160" />
+    </state>
+    <state x="-471" y="180" width="2573" height="1547" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.2133.1160/-157.-2160.2560.1400@-157.-2160.2560.1400" timestamp="1600512081588" />
     <state x="1289" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1600475849435">
       <screen x="0" y="0" width="3200" height="1760" />
     </state>
     <state x="859" y="0" key="com.intellij.ide.util.TipDialog/0.0.2133.1160@0.0.2133.1160" timestamp="1600475036917" />
     <state x="1289" y="0" key="com.intellij.ide.util.TipDialog/0.0.3200.1760@0.0.3200.1760" timestamp="1600475849435" />
+    <state x="771" y="-1824" width="2147" height="1241" key="dock-window-1" timestamp="1600513089979">
+      <screen x="-157" y="-2160" width="2560" height="1400" />
+    </state>
+    <state x="771" y="-1824" width="2147" height="1241" key="dock-window-1/0.0.2133.1160/-157.-2160.2560.1400@-157.-2160.2560.1400" timestamp="1600513089979" />
+    <state x="-164" y="-2160" width="1293" height="1407" key="dock-window-2" timestamp="1600513113405">
+      <screen x="-157" y="-2160" width="2560" height="1400" />
+    </state>
+    <state x="-164" y="-2160" width="1293" height="1407" key="dock-window-2/0.0.2133.1160/-157.-2160.2560.1400@-157.-2160.2560.1400" timestamp="1600513113405" />
   </component>
 </project>

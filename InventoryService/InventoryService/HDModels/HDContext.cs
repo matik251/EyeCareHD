@@ -7,23 +7,10 @@ namespace InventoryService.HDModels
     public partial class HDContext : DbContext
     {
 
-        //public HDContext()
-        //{
-        //}
-
         public HDContext(DbContextOptions<HDContext> options)
             : base(options)
         {
         }
-
-//        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-//        {
-//            if (!optionsBuilder.IsConfigured)
-//            {
-//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-//                optionsBuilder.UseSqlServer("Data Source=185.79.243.30;Initial Catalog=HD;Persist Security Info=True;User ID=SA;Password=matikubaK1617!");
-//            }
-//        }
 
         public virtual DbSet<DataRecords> DataRecords { get; set; }
         public virtual DbSet<Devices> Devices { get; set; }

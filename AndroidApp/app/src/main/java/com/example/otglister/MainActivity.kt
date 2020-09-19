@@ -11,6 +11,8 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
+import okhttp3.*
+import okhttp3.RequestBody.Companion.toRequestBody
 import java.io.IOException
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
@@ -20,6 +22,7 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
     private var sensor: Sensor? = null
     private var sensorManager: SensorManager? = null
     private lateinit var fusedLocationClient: FusedLocationProviderClient
+    private var senderService: SenderService? = null
 
     data class LightPosLog(val user: String, val time: String, val light: Float, var location: Location?, var sent2DB: Boolean?)
 
@@ -49,6 +52,8 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
         sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
         sensor = sensorManager!!.getDefaultSensor(Sensor.TYPE_LIGHT)
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
+
+        senderService = SenderService()
     }
 
     override fun onDestroy() {
@@ -108,6 +113,7 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
         }
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, listItems)
         listView.adapter = adapter
+        sendData()
     }
 
     fun onBgWorkCheckedChanged(checked: Boolean) {
@@ -118,5 +124,32 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
     fun onFirebaseCheckedChanged(checked: Boolean) {
         // implementation
         sending = checked
+    }
+
+    fun sendData() {
+        val currTime = LocalDateTime.now();
+        val payload = "{\n" +
+                "    \"Mac\": \"30-52-CB-81-87-27\",\n" +
+                "    \"Category\": \"Sender\",\n" +
+                "    \"Data\": 154,\n" +
+                "    \"CreationTime\": \"2020-09-19T01:50:34\",\n" +
+                "    \"SendTime\": \"$currTime\"\n" +
+                "}"
+
+        val okHttpClient = OkHttpClient()
+        val requestBody = payload.toRequestBody()
+        val request = Request.Builder()
+            .method("POST", requestBody)
+            .url("https://192.168.55.105:5001/api/DataRecords")
+            .build()
+        okHttpClient.newCall(request).enqueue(object : Callback {
+            override fun onFailure(call: Call, e: IOException) {
+                val toast = Toast.makeText(applicationContext, e.message, Toast.LENGTH_SHORT)
+            }
+
+            override fun onResponse(call: Call, response: Response) {
+                val toast = Toast.makeText(applicationContext, response.message, Toast.LENGTH_SHORT)
+            }
+        })
     }
 }

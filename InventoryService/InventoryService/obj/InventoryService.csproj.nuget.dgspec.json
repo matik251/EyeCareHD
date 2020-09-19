@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dell\\source\\repos\\InventoryService\\InventoryService\\InventoryService.csproj": {}
+    "C:\\Users\\Dell\\Documents\\GitHub\\EyeCareHD\\InventoryService\\InventoryService\\InventoryService.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dell\\source\\repos\\InventoryService\\InventoryService\\InventoryService.csproj": {
+    "C:\\Users\\Dell\\Documents\\GitHub\\EyeCareHD\\InventoryService\\InventoryService\\InventoryService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dell\\source\\repos\\InventoryService\\InventoryService\\InventoryService.csproj",
+        "projectUniqueName": "C:\\Users\\Dell\\Documents\\GitHub\\EyeCareHD\\InventoryService\\InventoryService\\InventoryService.csproj",
         "projectName": "InventoryService",
-        "projectPath": "C:\\Users\\Dell\\source\\repos\\InventoryService\\InventoryService\\InventoryService.csproj",
+        "projectPath": "C:\\Users\\Dell\\Documents\\GitHub\\EyeCareHD\\InventoryService\\InventoryService\\InventoryService.csproj",
         "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dell\\source\\repos\\InventoryService\\InventoryService\\obj\\",
+        "outputPath": "C:\\Users\\Dell\\Documents\\GitHub\\EyeCareHD\\InventoryService\\InventoryService\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",

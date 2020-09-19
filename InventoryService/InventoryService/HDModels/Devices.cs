@@ -7,6 +7,7 @@ namespace InventoryService.HDModels
     {
         public int DeviceId { get; set; }
         public string IpAddress { get; set; }
+        public string Port { get; set; }
         public string Category { get; set; }
         public DateTime CreationTime { get; set; }
         public DateTime? ModTime { get; set; }

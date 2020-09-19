@@ -8,21 +8,15 @@ import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import android.location.Location
-import android.location.LocationManager
 import android.net.wifi.WifiManager
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import com.google.android.gms.location.FusedLocationProviderClient
-import com.google.android.gms.location.LocationListener
 import com.google.android.gms.location.LocationServices
-import okhttp3.Call
-import okhttp3.Callback
-import okhttp3.OkHttpClient
-import okhttp3.Request
+import okhttp3.*
 import okhttp3.RequestBody.Companion.toRequestBody
-import okhttp3.Response
 import java.io.IOException
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
@@ -40,6 +34,8 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
     var dataList = HashMap<Int, LightPosLog>()
     var scanning = true;
     var sending = false;
+
+    var endpointList = HashMap<Int, String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -105,14 +101,6 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
                 arrayOf(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION),
                 1
             );
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            //return
         }
         fusedLocationClient.lastLocation
             .addOnSuccessListener { location : Location? ->
@@ -199,21 +187,36 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
         val okHttpClient = OkHttpClient.Builder()
             .followRedirects(true)
             .build()
-
+        var endpointURL = endpointList.get(0); //pobranie adresu Endpointa
         val requestBody = payload.toRequestBody()
-        val request = Request.Builder()
-            .header("Content-Type","application/json")
-            .method("POST", requestBody)
-            .url("http://192.168.55.105:5001/api/DataRecords")
-            .build()
-        okHttpClient.newCall(request).enqueue(object : Callback {
-            override fun onFailure(call: Call, e: IOException) {
-            }
-
-            override fun onResponse(call: Call, response: Response) {
-                result = true
-            }
-        })
+        val request = endpointURL?.let {
+            Request.Builder()
+                .header("Content-Type","application/json")
+                .method("POST", requestBody)
+                .url("192.168.55.105:5001"+ "/api/DataRecords") //usunac .url(it)
+                .build()
+        }
+        if (request != null) {
+            okHttpClient.newCall(request).enqueue(object : Callback {
+                override fun onFailure(call: Call, e: IOException) {
+                    endpointList.remove(0) //usuwanie wadliwego Endpointa
+                }
+                override fun onResponse(call: Call, response: Response) {
+                    result = true
+                }
+            })
+        }
         return result
+    }
+
+    fun getEndpoints(): String {
+        var responseString: String? = null;
+        val client = OkHttpClient.Builder()
+            .followRedirects(true)
+            .build()
+            val request = Request.Builder()
+                .url("192.168.55.105:5001" + "/api/Devices")
+                .build()
+        client.newCall(request).execute().use { response -> return response.body!!.string() }
     }
 }

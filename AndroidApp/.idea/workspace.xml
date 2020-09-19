@@ -6,22 +6,12 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a03d1fbc-e3e3-40e9-bde6-4f93ca4fb278" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../InventoryService/.vs/InventoryService/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../InventoryService/.vs/InventoryService/v16/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../InventoryService/InventoryService/HDModels/Devices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../InventoryService/InventoryService/HDModels/Devices.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../InventoryService/InventoryService/HDModels/HDContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../InventoryService/InventoryService/HDModels/HDContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../InventoryService/InventoryService/bin/Debug/netcoreapp3.1/InventoryService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../InventoryService/InventoryService/bin/Debug/netcoreapp3.1/InventoryService.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../InventoryService/InventoryService/bin/Debug/netcoreapp3.1/InventoryService.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../InventoryService/InventoryService/bin/Debug/netcoreapp3.1/InventoryService.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../InventoryService/InventoryService/obj/Debug/netcoreapp3.1/InventoryService.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../InventoryService/InventoryService/obj/Debug/netcoreapp3.1/InventoryService.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../InventoryService/InventoryService/obj/Debug/netcoreapp3.1/InventoryService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../InventoryService/InventoryService/obj/Debug/netcoreapp3.1/InventoryService.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../InventoryService/InventoryService/obj/Debug/netcoreapp3.1/InventoryService.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../InventoryService/InventoryService/obj/Debug/netcoreapp3.1/InventoryService.pdb" afterDir="false" />
-    </list>
+    <list default="true" id="a03d1fbc-e3e3-40e9-bde6-4f93ca4fb278" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="LMG710EM15d7bfc0" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -54,8 +44,9 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="C:/Downloads" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
@@ -164,6 +155,10 @@
       <screen x="-157" y="-2160" width="2560" height="1400" />
     </state>
     <state width="1093" height="1030" key="DebuggerActiveHint/0.0.2133.1160/-157.-2160.2560.1400@-157.-2160.2560.1400" timestamp="1600532253540" />
+    <state x="1380" y="307" key="FileChooserDialogImpl" timestamp="1600544755761">
+      <screen x="0" y="0" width="2133" height="1160" />
+    </state>
+    <state x="1380" y="307" key="FileChooserDialogImpl/0.0.2133.1160/-157.-2160.2560.1400@0.0.2133.1160" timestamp="1600544755761" />
     <state width="2089" height="480" key="GridCell.Tab.0.bottom" timestamp="1600544128139">
       <screen x="0" y="0" width="2133" height="1160" />
     </state>
@@ -216,9 +211,10 @@
       <screen x="0" y="0" width="2133" height="1160" />
     </state>
     <state x="-471" y="180" width="2573" height="1547" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.2133.1160/-157.-2160.2560.1400@-157.-2160.2560.1400" timestamp="1600512081588" />
-    <state x="1289" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1600475849435">
-      <screen x="0" y="0" width="3200" height="1760" />
+    <state x="859" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1600544639101">
+      <screen x="0" y="0" width="2133" height="1160" />
     </state>
+    <state x="859" y="0" key="com.intellij.ide.util.TipDialog/0.0.2133.1160/-157.-2160.2560.1400@0.0.2133.1160" timestamp="1600544639101" />
     <state x="859" y="0" key="com.intellij.ide.util.TipDialog/0.0.2133.1160@0.0.2133.1160" timestamp="1600475036917" />
     <state x="1289" y="0" key="com.intellij.ide.util.TipDialog/0.0.3200.1760@0.0.3200.1760" timestamp="1600475849435" />
     <state x="771" y="-1824" width="2147" height="1241" key="dock-window-1" timestamp="1600513089979">

@@ -5,54 +5,54 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using InventoryService.Models;
+using InventoryService.HDModels;
 
 namespace InventoryService.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductsController : ControllerBase
+    public class DevicesController : ControllerBase
     {
         private readonly HDContext _context;
 
-        public ProductsController(HDContext context)
+        public DevicesController(HDContext context)
         {
             _context = context;
         }
 
-        // GET: api/Products
+        // GET: api/Devices
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Products>>> GetProducts()
+        public async Task<ActionResult<IEnumerable<Devices>>> GetDevices()
         {
-            return await _context.Products.ToListAsync();
+            return await _context.Devices.ToListAsync();
         }
 
-        // GET: api/Products/5
+        // GET: api/Devices/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Products>> GetProducts(int id)
+        public async Task<ActionResult<Devices>> GetDevices(int id)
         {
-            var products = await _context.Products.FindAsync(id);
+            var devices = await _context.Devices.FindAsync(id);
 
-            if (products == null)
+            if (devices == null)
             {
                 return NotFound();
             }
 
-            return products;
+            return devices;
         }
 
-        // PUT: api/Products/5
+        // PUT: api/Devices/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutProducts(int id, Products products)
+        public async Task<IActionResult> PutDevices(int id, Devices devices)
         {
-            if (id != products.ProductId)
+            if (id != devices.DeviceId)
             {
                 return BadRequest();
             }
 
-            _context.Entry(products).State = EntityState.Modified;
+            _context.Entry(devices).State = EntityState.Modified;
 
             try
             {
@@ -60,7 +60,7 @@ namespace InventoryService.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ProductsExists(id))
+                if (!DevicesExists(id))
                 {
                     return NotFound();
                 }
@@ -73,37 +73,37 @@ namespace InventoryService.Controllers
             return NoContent();
         }
 
-        // POST: api/Products
+        // POST: api/Devices
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Products>> PostProducts(Products products)
+        public async Task<ActionResult<Devices>> PostDevices(Devices devices)
         {
-            _context.Products.Add(products);
+            _context.Devices.Add(devices);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetProducts", new { id = products.ProductId }, products);
+            return CreatedAtAction("GetDevices", new { id = devices.DeviceId }, devices);
         }
 
-        // DELETE: api/Products/5
+        // DELETE: api/Devices/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Products>> DeleteProducts(int id)
+        public async Task<ActionResult<Devices>> DeleteDevices(int id)
         {
-            var products = await _context.Products.FindAsync(id);
-            if (products == null)
+            var devices = await _context.Devices.FindAsync(id);
+            if (devices == null)
             {
                 return NotFound();
             }
 
-            _context.Products.Remove(products);
+            _context.Devices.Remove(devices);
             await _context.SaveChangesAsync();
 
-            return products;
+            return devices;
         }
 
-        private bool ProductsExists(int id)
+        private bool DevicesExists(int id)
         {
-            return _context.Products.Any(e => e.ProductId == id);
+            return _context.Devices.Any(e => e.DeviceId == id);
         }
     }
 }

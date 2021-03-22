@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1339503689/OtgLister.iml" filepath="$PROJECT_DIR$/.idea/modules/-1339503689/OtgLister.iml" group="OtgLister" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1012716023/OtgLister.iml" filepath="$PROJECT_DIR$/.idea/modules/-1012716023/OtgLister.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/OtgLister.app.iml" filepath="$PROJECT_DIR$/.idea/modules/OtgLister.app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app.iml" filepath="$PROJECT_DIR$/app.iml" group="OtgLister/app" />
     </modules>
   </component>

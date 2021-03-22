@@ -4,7 +4,7 @@
  EyeCareHD is a system built in purpose of tracking human environment parameters , insolation condition in particular.
 
  <p align="center">
-  <img src="https://github.com/matik251/OtgLister/blob/master/OtgListerScreenshot.jpg?raw=true" width="40%" height="auto" 
+  <img src="https://github.com/matik251/EyeCareHD/blob/master/AndroidApp/EyeCareHD-Screenshot.jpg" width="40%" height="auto" 
 </p>
 
 ## Table of contents
@@ -13,7 +13,7 @@
   - [Technologies](#technologies)
   - [Features](#features)
   - [Data](#data)
-	
+    
 ## Technologies
 | Part of system  | Project         | Technologies  |
 | :-------------- |:---------------:| :------------ |

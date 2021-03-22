@@ -6,13 +6,6 @@
  <p align="center">
   <img src="https://github.com/matik251/EyeCareHD/blob/master/AndroidApp/EyeCareHD-Screenshot.jpg" width="40%" height="auto" 
 </p>
-
-## Table of contents
-- [EyeCareHD](#eyecarehd)
-  - [Table of contents](#table-of-contents)
-  - [Technologies](#technologies)
-  - [Features](#features)
-  - [Data](#data)
     
 ## Technologies
 | Part of system  | Project         | Technologies  |
@@ -28,3 +21,9 @@ System allows user to track his daily sun exposure and amount of light at workpl
 ```
 
 ```
+## Table of contents
+- [EyeCareHD](#eyecarehd)
+  - [Technologies](#technologies)
+  - [Features](#features)
+  - [Data](#data)
+  - [Table of contents](#table-of-contents)
